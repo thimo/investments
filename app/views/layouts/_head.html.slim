@@ -1,0 +1,16 @@
+head
+  title
+    = full_title(yield(:title))
+  meta charset="utf-8"
+  / meta http-equiv="X-UA-Compatible" content="IE=edge"
+  / meta name="description" content="#{full_title(yield(:title) || yield(:page_title))}"
+  / meta name="author" content="#{Tenant.setting('club_name')} #{Tenant.setting('application_name')}"
+  / meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+  / link rel="shortcut icon" href="#{Tenant.setting("application_favicon_url")}"
+  / script src="https://kit.fontawesome.com/#{Tenant.setting("fontawesome_kit_nr").presence || '0406076536'}.js"
+
+  = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+  = javascript_pack_tag 'application', defer: true, 'data-turbolinks-track': 'reload'
+
+  = csrf_meta_tags
+  = csp_meta_tag
