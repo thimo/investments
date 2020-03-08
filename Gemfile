@@ -45,7 +45,7 @@ group :development do
   gem "rubocop"
   gem "rubocop-performance"
   gem "rubocop-rails"
-  gem "ruby-debug-ide"
+  gem "ruby-debug-ide", require: false
   gem "solargraph"
 end
 
