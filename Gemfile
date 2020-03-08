@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -12,14 +14,15 @@ gem "redis", "~> 4.0"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
 
+gem "awesome_print", require: "awesome_print"
 gem "bootsnap", ">= 1.4.2", require: false
-gem "slim-rails"
 gem "bootstrap_form"
 gem "country_select"
 gem "devise", "~> 4.7"
+gem "draper"
 gem "enum_help", "~> 0.0.17"
-gem "awesome_print", require: "awesome_print"
 gem "pundit"
+gem "slim-rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
@@ -36,8 +39,8 @@ group :development do
   gem "pry-rails"
   gem "rack-livereload"
   gem "scout_apm"
-  gem "spring-watcher-listen"
   gem "spring"
+  gem "spring-watcher-listen"
   gem "terminal-notifier-guard"
   gem "web-console", ">= 3.3.0"
 
@@ -51,12 +54,12 @@ end
 
 group :test do
   gem "capybara", ">= 2.15"
-  gem "selenium-webdriver"
-  gem "webdrivers"
   gem "faker"
+  gem "launchy" # For "save_and_open_page" debugging during testing
   gem "minitest"
   gem "minitest-reporters"
-  gem "launchy" # For "save_and_open_page" debugging during testing
+  gem "selenium-webdriver"
+  gem "webdrivers"
 end
 
 group :production, :staging do
