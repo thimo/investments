@@ -1,0 +1,18 @@
+- provide(:title, t('.forgot_your_password', default: 'Forgot your password?'))
+- provide(:subtitle, "Ontvang instructies om een nieuw wachtwoord in te stellen")
+
+= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, role: 'form' }) do |f|
+  = f.alert_message t("bootstrap_form.check_errors")
+
+  = f.text_field :email,
+    prepend: tag.i(class: [fa_class, 'fa-at']),
+    autofocus: true,
+    class: 'form-control',
+    placeholder: User.human_attribute_name(:email),
+    hide_label: true,
+    help: "Gebruik het e-mailadres waarmee je bekend bent in de ledenadministratie van #{Tenant.setting("club_name_short")}."
+
+  .row
+    .col-6
+      = f.submit t('.send_me_reset_password_instructions', default: 'Send me reset password instructions'),
+        class: 'btn btn-primary px-4'

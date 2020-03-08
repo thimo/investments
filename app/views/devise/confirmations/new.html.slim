@@ -1,0 +1,19 @@
+- provide(:title, t('.resend_confirmation', default: 'Confirmation instructions'))
+- provide(:subtitle, "Vraag de instructies voor het bevestigen opnieuw aan")
+
+= bootstrap_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, role: 'form' }) do |f|
+  = f.alert_message t("bootstrap_form.check_errors")
+
+  = f.text_field :email,
+                 prepend: tag.i(class: [fa_class, 'fa-at']),
+                 autofocus: true,
+                 class: "form-control",
+                 placeholder: User.human_attribute_name(:email),
+                 hide_label: true,
+                 value: params[:email],
+                 help: "Gebruik het e-mailadres waarmee je bekend bent in de ledenadministratie van #{Tenant.setting("club_name_short")}."
+
+  .row
+    .col-6
+      = f.submit t('.resend_confirmation_instructions', default: 'Resend confirmation instructions'),
+        class: 'btn btn-primary px-4'
