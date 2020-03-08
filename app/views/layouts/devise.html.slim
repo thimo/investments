@@ -1,0 +1,35 @@
+doctype html
+html
+  = render "layouts/head"
+
+  body
+    .container
+      .row.justify-content-center
+        .col-md-8.col-lg-7.col-xl-6
+          .header
+            | [insert logo here]
+
+          .text-center
+            - if flash.present?
+              - flash.each do |message_type, messages|
+                - [messages].flatten.each do |message|
+                  - if message.present?
+                    div
+                      .alert.alert-dismissible.invisible.fade[data={ controller: "alert-fade-in" } role="alert" class="alert-#{message_type.sub('alert', 'danger')}"]
+                        button.close[type="button" data-dismiss="alert" aria-label="Close"]
+                          span[aria-hidden="true"]
+                            i.fa.fa-times
+                        | #{message}
+            div
+              = yield(:flash)
+
+          .card.my-4
+            .card-body
+              h1.mb-0
+                = yield(:title)
+              div.text-muted.mb-3
+                = yield(:subtitle)
+
+              = yield
+
+      = render 'devise/shared/links'

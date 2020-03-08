@@ -1,0 +1,20 @@
+doctype html
+html
+  = render "layouts/head"
+
+  body
+    .app.devise.flex-row.align-items-center
+      .container
+        .row.justify-content-center
+          .col-md-8.col-lg-6.col-xl-5
+            .header
+              | [insert logo here]
+
+            .card.p-3
+              .card-body
+                h1.mb-0
+                  = yield(:title)
+                div.text-muted.mb-3
+                  = yield(:subtitle)
+
+                = yield
