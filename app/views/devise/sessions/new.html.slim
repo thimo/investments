@@ -9,8 +9,7 @@
     autofocus: true,
     class: 'form-control',
     placeholder: User.human_attribute_name(:email),
-    hide_label: true,
-    help: "Gebruik het e-mailadres waarmee je bekend bent in de ledenadministratie van #{Tenant.setting("club_name_short")}."
+    hide_label: true
 
   = f.password_field :password,
     prepend: tag.i(class: [fa_class, 'fa-lock-alt']),
@@ -32,10 +31,7 @@
 
 - content_for :form_help
   h3
-    | Geen toegang?
-  p
-    | Heb je nog geen toegang tot #{Tenant.setting("application_name")}, maar ben je wel lid van #{Tenant.setting("club_name_short")}?
-      Meld je dan nu aan!
+    | Geen toegang? #TODO
 
   = link_to "Login aanmaken",
     new_registration_path(resource_name),
