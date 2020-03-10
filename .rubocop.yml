@@ -30,6 +30,9 @@ Style/Documentation:
     - app/models/**/*
     - lib/**/*
 
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
+
 Style/Lambda:
   EnforcedStyle: literal
 

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # A user can login to the application
 class User < ApplicationRecord
   # Include default devise modules. Others available are:

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module ApplicationHelper
   def full_title(page_title = "")
     base_title = "Investments"
@@ -8,5 +6,9 @@ module ApplicationHelper
     else
       page_title + " | " + base_title
     end
+  end
+
+  def fa_class
+    "fad"
   end
 end
