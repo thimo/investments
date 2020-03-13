@@ -4,7 +4,6 @@ on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     services:
@@ -24,6 +23,12 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6
+    - uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
     - name: Build and test with Rake
       env:
         PGHOST: 127.0.0.1
@@ -38,4 +43,4 @@ jobs:
         yarn install
         bundle exec rails db:create
         bundle exec rails db:schema:load
-        bundle exec rails test:system test
+        bundle exec rake
