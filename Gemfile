@@ -7,20 +7,19 @@ gem "jbuilder", "~> 2.7"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 4.1"
 gem "rails", "~> 6.0.2", ">= 6.0.2.1"
-gem "rails-i18n"
+gem "rails-i18n", "~> 6.0"
 gem "redis", "~> 4.0"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
 
 gem "awesome_print", require: "awesome_print"
 gem "bootsnap", ">= 1.4.2", require: false
-gem "bootstrap_form"
-gem "country_select"
+gem "bootstrap_form", "~> 4.3"
+gem "country_select", "~> 4.0"
 gem "devise", "~> 4.7"
-gem "draper"
+gem "draper", "~> 4.0"
 gem "enum_help", "~> 0.0.17"
-gem "pundit"
-gem "slim-rails"
+gem "slim-rails", "~> 3.2"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
@@ -61,5 +60,5 @@ group :test do
 end
 
 group :production, :staging do
-  gem "exception_notification"
+  gem "exception_notification", "~> 4.4"
 end

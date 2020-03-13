@@ -220,8 +220,6 @@ GEM
     public_suffix (4.0.3)
     puma (4.3.3)
       nio4r (~> 2.0)
-    pundit (2.1.0)
-      activesupport (>= 3.0.0)
     rack (2.2.2)
     rack-livereload (0.3.17)
       rack
@@ -385,15 +383,15 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   bootsnap (>= 1.4.2)
-  bootstrap_form
+  bootstrap_form (~> 4.3)
   bullet
   byebug
   capybara (>= 2.15)
-  country_select
+  country_select (~> 4.0)
   devise (~> 4.7)
-  draper
+  draper (~> 4.0)
   enum_help (~> 0.0.17)
-  exception_notification
+  exception_notification (~> 4.4)
   factory_bot_rails
   faker
   guard
@@ -408,10 +406,9 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   pry-rails
   puma (~> 4.1)
-  pundit
   rack-livereload
   rails (~> 6.0.2, >= 6.0.2.1)
-  rails-i18n
+  rails-i18n (~> 6.0)
   redis (~> 4.0)
   reek
   rubocop
@@ -420,7 +417,7 @@ DEPENDENCIES
   ruby-debug-ide
   scout_apm
   selenium-webdriver
-  slim-rails
+  slim-rails (~> 3.2)
   solargraph
   spring
   spring-watcher-listen
